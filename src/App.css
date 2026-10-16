@@ -1,0 +1,10 @@
+.sidebar{
+    height:60rem;
+}
+.containerOfAll{
+    display: flex;
+    width: 100vw;
+}
+.Content{
+    width: 100%;
+}
