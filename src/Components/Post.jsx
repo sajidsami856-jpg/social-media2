@@ -13,7 +13,8 @@ const Post=({post})=>{
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletePost(post.id)}>
                     <MdDelete />
                 </span>
-                <div class="alert alert-primary" role="alert">
+                <span class="badge bg-secondary tagSpan">Light</span>
+                <div class="alert alert-primary postReactions" role="alert">
                     This post has been reacted by {post.reactions} people.
                 </div>
             </div>

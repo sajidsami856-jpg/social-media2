@@ -20,3 +20,14 @@
     margin-bottom: 0px;
     color:rgb(183, 24, 24);
 }
+.CreatePost{
+    width:60%;
+    margin:5rem;
+}
+.tagSpan{
+    margin:0 0.2rem 0.5rem 0.5rem;
+}
+.postReactions{
+    margin-bottom:0px !important;
+    margin: 0.4rem 0;
+}

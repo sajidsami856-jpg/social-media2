@@ -34,8 +34,8 @@ const postListReducer=(currPostList,action)=>{
 const PostListProvider=({children})=>{
     const [postList,dispatchPostList]=useReducer(postListReducer,DEFAULT_POST_LIST);
 
-    const addPost=()=>{
-
+    const addPost=(userId,title,body,reactions,tags)=>{
+        console.log(userId,title,body,reactions,tags);
     }
 
     const deletePost=(postId)=>{

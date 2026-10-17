@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import "./App.css";
 import 'bootstrap/dist/css/bootstrap.css';
+import "./App.css";
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import PostListProvider from "./Store/Post-List-Store";
