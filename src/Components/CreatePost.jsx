@@ -15,7 +15,7 @@ const CreatePost=()=>{
         const title =titleElement.current.value;
         const body=bodyElement.current.value;
         const reactions=reactionElement.current.value;
-        const tags=tagElement.current.value.split(/\s+/);
+        const tags=tagElement.current.value.split(" ");
 
         addPost(userId,title,body,reactions,tags);
     }
