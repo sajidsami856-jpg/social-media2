@@ -8,6 +8,15 @@
 .Content{
     width: 100%;
 }
-/* .post-card{
-
-} */
+.post-card{
+    margin: 2rem 2.5rem;
+    min-height:9rem;
+    /* min-width: 0rem; */
+    /* background-color: antiquewhite; */
+}
+.reactions{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 0px;
+    color:rgb(183, 24, 24);
+}
