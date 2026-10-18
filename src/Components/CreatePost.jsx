@@ -16,8 +16,13 @@ const CreatePost=()=>{
         const body=bodyElement.current.value;
         const reactions=reactionElement.current.value;
         const tags=tagElement.current.value.split(" ");
-
         addPost(userId,title,body,reactions,tags);
+        userIdElement.current.value="";
+        userIdElement.current.value="";
+        titleElement.current.value="";
+        bodyElement.current.value="";
+        reactionElement.current.value="";
+        tagElement.current.value="";
     }
 
     return (
