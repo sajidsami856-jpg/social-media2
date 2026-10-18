@@ -13,10 +13,10 @@ const Post=({post})=>{
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletePost(post.id)}>
                     <MdDelete />
                 </span>
-                {post.tags.map((tag)=><span class="badge bg-secondary tagSpan">#{tag}</span> )}
+                {post.tags.map((tag)=><span key={tag} class="badge bg-secondary tagSpan">#{tag}</span> )}
                 
                 <div class="alert alert-primary postReactions" role="alert">
-                    This post has been reacted by {post.reactions} people.
+                    This post has been liked by {post.reactions.likes} people.
                 </div>
             </div>
         </div>

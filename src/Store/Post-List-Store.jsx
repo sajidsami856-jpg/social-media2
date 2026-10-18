@@ -3,24 +3,9 @@ import { createContext, useContext, useReducer } from "react";
 export const PostList =createContext({
     postList:[],
     addPost:()=>{},
+    addInitialPosts:()=>{},
     deletePost:()=>{},
 });
-
-// const DEFAULT_POST_LIST=[{
-//     id:'1',
-//     title:"Going to Dhaka",
-//     body:"Hi friends, Im going to Dhaka for my interview",
-//     reactions:2,
-//     userId:"user-9",
-//     tags:["interview","Dhaka","nervous"],
-// },{
-//     id:'2',
-//     title:"Passed HSC",
-//     body:"I got passed HSC with a good GPA",
-//     reactions:10,
-//     userId:"user-12",
-//     tags:["Passed","HSC-2027","Result"],
-// }]
 
 const postListReducer=(currPostList,action)=>{
     let newPostList=currPostList;
@@ -28,6 +13,8 @@ const postListReducer=(currPostList,action)=>{
         newPostList=currPostList.filter(post=> post.id !== action.payload.postId);
     }else if(action.type==="ADD_POST"){
         newPostList=[action.payload,...currPostList]
+    }else if(action.type==="INITIAL_POSTS"){
+        newPostList=action.payload.posts;
     }
     return newPostList;
 }
@@ -58,8 +45,16 @@ const PostListProvider=({children})=>{
         })
     }
 
+    const addInitialPosts=(posts)=>{
+        dispatchPostList({
+            type:"INITIAL_POSTS",
+            payload:{
+                posts,
+            }
+        })
+    }
 
-    return <PostList.Provider value={{postList,addPost,deletePost}}> 
+    return <PostList.Provider value={{postList,addPost,deletePost,addInitialPosts}}> 
         {children}
     </PostList.Provider>
 }
