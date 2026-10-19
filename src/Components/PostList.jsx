@@ -8,6 +8,7 @@ const PostList =()=>{
     const {postList,addInitialPosts} =useContext(PostListData);
     const [fetching,setFetching]=useState(false);
     useEffect(()=>{
+        console.log("got to show");
         setFetching(true); 
         const controller =new AbortController();
         const signal =controller.signal;
