@@ -27,8 +27,7 @@ const CreatePost=()=>{
                 userId:userId,
                 tags:tags,
                 })
-            })
-            .then(res => res.json())
+            }).then(res => res.json())
                 .then((post)=> {
                     console.log("post send");
                     addPost(post)
