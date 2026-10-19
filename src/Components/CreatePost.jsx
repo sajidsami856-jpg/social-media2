@@ -29,16 +29,16 @@ const CreatePost=()=>{
                 })
             }).then(res => res.json())
                 .then((post)=> {
-                    console.log("post send");
+                    console.log(post);
                     addPost(post)
                 });
         
-        // userIdElement.current.value="";
-        // userIdElement.current.value="";
-        // titleElement.current.value="";
-        // bodyElement.current.value="";
-        // reactionElement.current.value="";
-        // tagElement.current.value="";
+        userIdElement.current.value="";
+        userIdElement.current.value="";
+        titleElement.current.value="";
+        bodyElement.current.value="";
+        reactionElement.current.value="";
+        tagElement.current.value="";
     }
 
     return (

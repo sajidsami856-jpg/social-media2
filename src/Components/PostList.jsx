@@ -5,23 +5,7 @@ import WelcomeMsg from './WelcomeMsg';
 import LoadingSpinner from "./LoadingSpinner";
 import { useState } from 'react';
 const PostList =()=>{
-    const {postList,addInitialPosts} =useContext(PostListData);
-    const [fetching,setFetching]=useState(false);
-    // useEffect(()=>{
-    //     console.log("got to show");
-    //     setFetching(true); 
-    //     const controller =new AbortController();
-    //     const signal =controller.signal;
-    //     fetch('https://dummyjson.com/posts',{signal}) 
-    //             .then(res => res.json())
-    //                 .then(data => {addInitialPosts(data.posts)
-    //                     setFetching(false)
-    //                 });
-    //     return ()=>{
-    //         console.log("clean up");
-    //         controller.abort();
-    //     }
-    // },[])
+    const {postList,fetching} =useContext(PostListData);
 
     return(
         <>
