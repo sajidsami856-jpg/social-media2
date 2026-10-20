@@ -7,6 +7,7 @@ import PostListProvider from "./Store/Post-List-Store";
 import Post from './Components/Post';
 import CreatePost from './Components/CreatePost';
 import PostList from './Components/PostList';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const [currPage,setPage]=useState("Home");
@@ -18,7 +19,8 @@ function App() {
         <Sidebar currPage={currPage} setPage={setPage}></Sidebar> 
         <div className='Content'>
           <Header></Header>
-          {currPage==="Home" ? <PostList></PostList>:<CreatePost></CreatePost> }
+          <Outlet></Outlet>
+          {/* {currPage==="Home" ? <PostList></PostList>:<CreatePost></CreatePost> } */}
               
         </div>
       </div>
