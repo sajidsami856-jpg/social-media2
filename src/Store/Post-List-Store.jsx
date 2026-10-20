@@ -4,20 +4,21 @@ export const PostList =createContext({
     postList:[],
     addPost:()=>{},
     fetching:false,
-    // addInitialPosts:()=>{},
+    addInitialPosts:()=>{},
     deletePost:()=>{},
 });
 
 const postListReducer=(currPostList,action)=>{
 
-    // console.log(action.payload);
+    // 
     let newPostList=currPostList;
     if(action.type==="DELETE_POST"){
         newPostList=currPostList.filter(post=> post.id !== action.payload.postId);
     }else if(action.type==="ADD_POST"){
         newPostList=[action.payload,...currPostList]
     }else if(action.type==="INITIAL_POSTS"){
-        newPostList=action.payload.posts;
+        console.log(action.payload.posts);
+        newPostList=action.payload;
     }
     return newPostList;
 }
@@ -43,7 +44,7 @@ const PostListProvider=({children})=>{
                 .then(res => res.json())
                     .then(data => {addInitialPosts(data.posts)
                         setFetching(false)
-                    });
+                    })
         return ()=>{
             console.log("clean up");
             controller.abort();
