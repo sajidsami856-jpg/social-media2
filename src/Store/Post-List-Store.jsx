@@ -4,7 +4,7 @@ export const PostList =createContext({
     postList:[],
     addPost:()=>{},
     fetching:false,
-    addInitialPosts:()=>{},
+    // addInitialPosts:()=>{},
     deletePost:()=>{},
 });
 
