@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Sidebar=({currPage,setPage})=>{
   const handleOnClick=(evt)=>{
     setPage(evt.target.innerText);
-    // setPage(evt);
+    // setPage(evt);${currPage==="Home" && "active"}`}
+    // ${currPage==="Create Post" && "active"}`}
   }
   return (
     <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar" style={{width: "280px"}} >
@@ -12,13 +15,13 @@ const Sidebar=({currPage,setPage})=>{
       <hr/>
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item" onClick={handleOnClick}>
-          <a href="#" className={`nav-link ${currPage==="Home" && "active"}`} aria-current="page">
+          <Link to="/" className="nav-link"  aria-current="page">
             <svg className="bi me-2" width="16" height="16"><use xlinkHref="#home"></use></svg>
             Home
-          </a>
+          </Link>
         </li>
         <li onClick={handleOnClick}>
-          <a href="#" className={`nav-link text-white ${currPage==="Create Post" && "active"}`}>
+          <a href="/create-post" className="nav-link text-white" >
             <svg className="bi me-2" width="16" height="16"><use xlinkHref="#speedometer2"></use></svg>
             Create Post
           </a>
@@ -26,10 +29,10 @@ const Sidebar=({currPage,setPage})=>{
       </ul>
       <hr/>
       <div className="dropdown">
-        <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <Link to="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2"/>
           <strong>mdo</strong>
-        </a>
+        </Link>
         <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
           <li><a className="dropdown-item" href="#">New project...</a></li>
           <li><a className="dropdown-item" href="#">Settings</a></li>
