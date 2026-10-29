@@ -10,12 +10,12 @@ const Post=({post})=>{
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.body}</p>
                 {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletePost(post.id)}>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletePost(post.id)}>
                     <MdDelete />
                 </span>
-                {post.tags.map((tag)=><span key={tag} class="badge bg-secondary tagSpan">#{tag}</span> )}
+                {post.tags.map((tag)=><span key={tag} className="badge bg-secondary tagSpan">#{tag}</span> )}
                 
-                <div class="alert alert-primary postReactions" role="alert">
+                <div className="alert alert-primary postReactions" role="alert">
                     This post has been liked by {post.reactions.likes} people.
                 </div>
             </div>

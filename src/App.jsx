@@ -19,9 +19,7 @@ function App() {
         <Sidebar currPage={currPage} setPage={setPage}></Sidebar> 
         <div className='Content'>
           <Header></Header>
-          <Outlet></Outlet>
-          {/* {currPage==="Home" ? <PostList></PostList>:<CreatePost></CreatePost> } */}
-              
+          <Outlet></Outlet>     
         </div>
       </div>
     </PostListProvider>

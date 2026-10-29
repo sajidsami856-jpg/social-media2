@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Sidebar=({currPage,setPage})=>{
+const Sidebar=()=>{
   const handleOnClick=(evt)=>{
     setPage(evt.target.innerText);
     // setPage(evt);${currPage==="Home" && "active"}`}
@@ -14,17 +14,17 @@ const Sidebar=({currPage,setPage})=>{
       </a>
       <hr/>
       <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item" onClick={handleOnClick}>
+        <li className="nav-item" >
           <Link to="/" className="nav-link"  aria-current="page">
             <svg className="bi me-2" width="16" height="16"><use xlinkHref="#home"></use></svg>
             Home
           </Link>
         </li>
-        <li onClick={handleOnClick}>
-          <a href="/create-post" className="nav-link text-white" >
+        <li >
+          <Link to="/create-post" className="nav-link text-white" >
             <svg className="bi me-2" width="16" height="16"><use xlinkHref="#speedometer2"></use></svg>
             Create Post
-          </a>
+          </Link>
         </li>
       </ul>
       <hr/>

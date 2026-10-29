@@ -11,8 +11,14 @@ const router =createBrowserRouter([
     path:"/",
     element:<App/>,
     children:[
-      {path:"/",element:<PostList/>},
-      {path:"/create-post",element:<CreatePost/>}
+      {
+        path:"/",
+        element:<PostList/>
+      },
+      {
+        path:"/create-post",
+        element:<CreatePost/>
+      }
     ]
   },
 ]);
@@ -20,6 +26,5 @@ const router =createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}/>
-    
   </StrictMode>,
 )

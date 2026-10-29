@@ -2,22 +2,23 @@ import { createContext, useContext, useReducer,useEffect,useState } from "react"
 
 export const PostList =createContext({
     postList:[],
-    addPost:()=>{},
     fetching:false,
+    addPost:()=>{},
     // addInitialPosts:()=>{},
     deletePost:()=>{},
 });
 
 const postListReducer=(currPostList,action)=>{
-
     // 
     let newPostList=currPostList;
-    if(action.type==="DELETE_POST"){
+    // console.log(newPostList);
+    if(action.type==="DELETE_POST"){       
+        // console.log(action.payload.postId);
         newPostList=currPostList.filter(post=> post.id !== action.payload.postId);
     }else if(action.type==="ADD_POST"){
         newPostList=[action.payload,...currPostList]
     }else if(action.type==="INITIAL_POSTS"){
-        console.log(action.payload.posts);
+        // console.log(action.payload.posts);
         newPostList=action.payload;
     }
     return newPostList;
@@ -67,6 +68,7 @@ const PostListProvider=({children})=>{
                 postId,
             }
         })
+ 
     }
 
     // const addInitialPosts=(posts)=>{

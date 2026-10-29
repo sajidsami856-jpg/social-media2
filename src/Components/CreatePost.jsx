@@ -32,9 +32,18 @@ const CreatePost=()=>{
             }).then(res => res.json())
                 .then((post)=> {
                     console.log(post);
-                    addPost(post);
+                    addPost({
+                        ...post,
+                        title,
+                        body,
+                        userId,
+                        tags,
+                        reactions: { likes: reactions, dislikes: 0 },
+                    });
                     navigatePage("/");
+                    
                 });
+
         
         userIdElement.current.value="";
         userIdElement.current.value="";
